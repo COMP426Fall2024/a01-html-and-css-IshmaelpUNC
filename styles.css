@@ -1,0 +1,65 @@
+/* styles.css */
+
+/* Reset margin and padding for the body */
+body {
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Task-bar section styling */
+  #task-bar {
+    height: 1in;
+    background-color: #333; /* Background color of your choice */
+    display: flex;
+    align-items: center;
+    justify-content: flex-end; /* Aligns content to the right */
+    padding: 0 20px; /* Adds padding to both sides */
+    width: 100%; /* Ensures the bar spans the full width of the viewport */
+    box-sizing: border-box; /* Includes padding in the element's total width */
+    position: fixed; /* Keeps the bar fixed at the top */
+    top: 0; /* Aligns it to the top of the viewport */
+    left: 0; /* Aligns it to the left edge of the viewport */
+    z-index: 1000; /* Ensures it stays above other content */
+  }
+  
+  #task-bar nav a {
+    color: white; /* Text color */
+    text-decoration: none; /* Removes underline from links */
+    margin-left: 20px; /* Adds space between the links */
+    font-size: 16px; /* Adjust font size */
+  }
+  
+  #task-bar nav a:hover {
+    text-decoration: underline; /* Underlines links when hovered */
+  }
+
+  .intro {
+    display: flex; /* Enables Flexbox for the intro section */
+    flex-direction: row; /* Aligns items in a row */
+    justify-content: space-between; /* Adds space between the two columns */
+    gap: 20px; /* Adds a gap between the columns */
+  }
+  
+  /* Styling for each column */
+  .summary, .preamble {
+    flex: 1; /* Ensures both columns take up equal space */
+    padding: 20px; /* Adds padding inside each column */
+    box-sizing: border-box; /* Includes padding in the element's total width */
+  }
+  
+  /* Optional: Add borders to better see the columns */
+  .summary {
+    background-color: #f2f2f2; /* Light background color for distinction */
+  }
+  
+  .preamble {
+    background-color: #e6e6e6; /* Slightly different background color */
+  }
+
+  @media (max-width: 768px) {
+    .intro {
+      flex-direction: column; /* Stacks the columns on smaller screens */
+    }
+  }
+  
+  
