@@ -1,65 +1,245 @@
 /* styles.css */
-
-/* Reset margin and padding for the body */
 body {
-    margin: 0;
-    padding: 0;
-  }
-  
-  /* Task-bar section styling */
-  #task-bar {
-    height: 1in;
-    background-color: #333; /* Background color of your choice */
-    display: flex;
-    align-items: center;
-    justify-content: flex-end; /* Aligns content to the right */
-    padding: 0 20px; /* Adds padding to both sides */
-    width: 100%; /* Ensures the bar spans the full width of the viewport */
-    box-sizing: border-box; /* Includes padding in the element's total width */
-    position: fixed; /* Keeps the bar fixed at the top */
-    top: 0; /* Aligns it to the top of the viewport */
-    left: 0; /* Aligns it to the left edge of the viewport */
-    z-index: 1000; /* Ensures it stays above other content */
-  }
-  
-  #task-bar nav a {
-    color: white; /* Text color */
-    text-decoration: none; /* Removes underline from links */
-    margin-left: 20px; /* Adds space between the links */
-    font-size: 16px; /* Adjust font size */
-  }
-  
-  #task-bar nav a:hover {
-    text-decoration: underline; /* Underlines links when hovered */
-  }
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif; /* Use the downloaded font */
+}
 
+@font-face {
+  font-family: 'NorseBold'; /* Name the font for use in CSS */
+  src: url('fonts/NorseBold-2Kge.otf') format('opentype'); /* Specify the font file and format */
+  font-weight: normal; /* Adjust if you have different weights */
+  font-style: normal; /* Adjust if you have italic versions */
+}
+
+#task-title {
+  color: white;
+  font-size: 32px;
+  margin-bottom: 10px;
+  font-weight: bold;
+  text-align: center;
+  font-family: 'NorseBold'
+  /* flex-grow: 1; */
+}
+
+/* Task-bar section styling */
+#task-bar {
+  height: 1in;
+  background-color: #333; /* Background color of your choice */
+  flex-direction: column;
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Aligns content to the right */
+  padding: 0 20px; /* Adds padding to both sides */
+  width: 100%; /* Ensures the bar spans the full width of the viewport */
+  box-sizing: border-box; /* Includes padding in the element's total width */
+  position: fixed; /* Keeps the bar fixed at the top */
+  top: 0; /* Aligns it to the top of the viewport */
+  left: 0; /* Aligns it to the left edge of the viewport */
+  z-index: 1000; /* Ensures it stays above other content */
+  font-family: 'NorseBold'
+}
+
+#task-bar nav a {
+  color: white; /* Text color */
+  text-decoration: none; /* Removes underline from links */
+  margin-left: 20px; /* Adds space between the links */
+  font-size: 16px; /* Adjust font size */
+}
+
+#task-bar nav a:hover {
+  text-decoration: underline; /* Underlines links when hovered */
+}
+
+.intro {
+  display: flex; /* Enables Flexbox for the intro section */
+  flex-direction: row; /* Aligns items in a row */
+  justify-content: space-between; /* Adds space between the two columns */
+  gap: 20px; /* Adds a gap between the columns */
+  padding-top: 80px; /* Ensures content doesn't overlap with the task-bar */
+  min-height: 300px; /* Sets a minimum height for visibility */
+}
+
+.page-wrapper{
+  padding-left: 1cm;
+  padding-right: 1cm;
+  max-width: 1600px;
+  margin: 0 auto;
+  box-sizing: border-box;
+  padding-top: .50in;
+
+}
+
+/* Styling for each column */
+.summary, .preamble {
+  flex: 1; /* Ensures both columns take up equal space */
+  padding: 20px; /* Adds padding inside each column */
+  box-sizing: border-box; /* Includes padding in the element's total width */
+  border: 4px solid #333; /* Adds a border around each column for visibility */
+  border-radius: 15px;
+  opacity: 0.90;
+}
+
+/* Background colors for the columns */
+.summary {
+  background-color: #f2f2f2; /* Light grey background */
+}
+
+.preamble {
+  background-color: #f2f2f2; /* Slightly darker grey */
+  font-family: 'NorseBold'
+}
+
+.preamble img {
+  width: 200px !important;
+  height: 200px !important;
+  object-fit: cover;
+  display: block;
+  margin-bottom: 10px;
+  border-radius: 15px;
+}
+
+.accordion-btn.active:after {
+  content: '\2212'; /* Change to "-" symbol */
+}
+
+.accordion-btn.active + .accordion-content {
+  max-height: 100px;
+}
+
+.timeline {
+  list-style: none;
+  padding: 0;
+}
+
+.timeline li {
+  margin: 10px 0;
+  position: relative;
+  padding-left: 30px;
+}
+
+.timeline li:before {
+  content: '';
+  position: absolute;
+  left: 10px;
+  top: 0;
+  height: 100%;
+  width: 2px;
+  background-color: #ccc;
+}
+
+.timeline li:after {
+  content: '';
+  position: absolute;
+  left: 2px;
+  top: 10px;
+  width: 16px;
+  height: 16px;
+  background-color: #fff;
+  border: 2px solid #ccc;
+  border-radius: 50%;
+}
+
+@media (max-width: 768px) {
   .intro {
-    display: flex; /* Enables Flexbox for the intro section */
-    flex-direction: row; /* Aligns items in a row */
-    justify-content: space-between; /* Adds space between the two columns */
-    gap: 20px; /* Adds a gap between the columns */
+    flex-direction: column; /* Stacks the columns on smaller screens */
   }
-  
-  /* Styling for each column */
-  .summary, .preamble {
-    flex: 1; /* Ensures both columns take up equal space */
-    padding: 20px; /* Adds padding inside each column */
-    box-sizing: border-box; /* Includes padding in the element's total width */
-  }
-  
-  /* Optional: Add borders to better see the columns */
-  .summary {
-    background-color: #f2f2f2; /* Light background color for distinction */
-  }
-  
-  .preamble {
-    background-color: #e6e6e6; /* Slightly different background color */
+}
+
+.bg {
+  animation:slide 60s ease-in-out infinite alternate;
+  background-image: linear-gradient(-60deg, rgb(15, 119, 194) 50%, rgb(126, 98, 16) 50%);
+  bottom:0;
+  left:-50%;
+  opacity:.3;
+  position:fixed;
+  right:-50%;
+  top:0;
+  z-index:-1;
+}
+
+.bg2 {
+  animation-direction:alternate-reverse;
+  animation-duration:40s;
+}
+
+.bg3 {
+  animation-duration:45s;
+}
+
+.content {
+  background-color:rgba(255,255,255,.8);
+  border-radius:.25em;
+  box-shadow:0 0 .25em rgba(0,0,0,.25);
+  box-sizing:border-box;
+  left:50%;
+  padding:10vmin;
+  position:fixed;
+  text-align:center;
+  top:50%;
+  transform:translate(-50%, -50%);
+}
+
+@keyframes slide {
+  0% {
+      transform:translateX(-25%);
   }
 
-  @media (max-width: 768px) {
-    .intro {
-      flex-direction: column; /* Stacks the columns on smaller screens */
-    }
+  100% {
+      transform:translateX(25%);
   }
-  
-  
+}
+
+/* Accordion styles */
+.accordion-btn {
+	cursor: pointer;
+	background-color: #ccc;
+	padding: 10px;
+	text-align: left;
+	outline: none;
+	border: none;
+	width: 100%;
+}
+
+.accordion-content {
+	padding: 0 18px;
+	overflow: hidden;
+	max-height: 0;
+	transition: max-height .3s ease-out;
+}
+
+.accordion-btn.active + .accordion-content {
+	max-height: 100px;
+}
+
+/* Summary styling in details elements */
+details div {
+	border-left: 2px solid #000;
+	border-right: 2px solid #000;
+	border-bottom: 2px solid #000;
+	padding: 1.5em;
+}
+
+details div > * + * {
+	margin-top: 1.5em;
+}
+
+details + details {
+	margin-top: .5rem;
+}
+
+summary {
+	border: 2px solid #000;
+	padding: .75em 1em;
+	cursor: pointer;
+	position: relative;
+	padding-left: calc(1.75rem + .75rem + .75rem);
+}
+
+details[open] summary {
+	background-color: #eee;
+}
+
+summary:hover {
+	background-color: #eee;
+}
