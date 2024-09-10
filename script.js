@@ -57,21 +57,3 @@ familySelect.addEventListener('change', function () {
     preambleImage.alt = `Image of ${selectedValue}`;
   }
 });
-
-document.querySelectorAll('.accordion-btn').forEach(button => {
-    button.addEventListener('click', () => {
-        const accordionContent = button.nextElementSibling;
-
-        // Toggle the active class on the button
-        button.classList.toggle('active');
-
-        // Check if the button is active
-        if (button.classList.contains('active')) {
-            // Set maxHeight to content's scrollHeight (auto-expanding content size)
-            accordionContent.style.maxHeight = accordionContent.scrollHeight + 'px';
-        } else {
-            // Collapse the content
-            accordionContent.style.maxHeight = 0;
-        }
-    });
-});

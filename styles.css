@@ -2,14 +2,16 @@
 body {
   margin: 0;
   padding: 0;
-  font-family: sans-serif; /* Use the downloaded font */
+  font-family: sans-serif;
+  padding-bottom: 1in;
+
 }
 
 @font-face {
-  font-family: 'NorseBold'; /* Name the font for use in CSS */
-  src: url('fonts/NorseBold-2Kge.otf') format('opentype'); /* Specify the font file and format */
-  font-weight: normal; /* Adjust if you have different weights */
-  font-style: normal; /* Adjust if you have italic versions */
+  font-family: 'NorseBold';
+  src: url('fonts/NorseBold-2Kge.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal; 
 }
 
 #task-title {
@@ -19,45 +21,43 @@ body {
   font-weight: bold;
   text-align: center;
   font-family: 'NorseBold'
-  /* flex-grow: 1; */
 }
 
-/* Task-bar section styling */
 #task-bar {
   height: 1in;
-  background-color: #333; /* Background color of your choice */
+  background-color: #333; 
   flex-direction: column;
   display: flex;
   align-items: center;
-  justify-content: center; /* Aligns content to the right */
-  padding: 0 20px; /* Adds padding to both sides */
-  width: 100%; /* Ensures the bar spans the full width of the viewport */
-  box-sizing: border-box; /* Includes padding in the element's total width */
-  position: fixed; /* Keeps the bar fixed at the top */
-  top: 0; /* Aligns it to the top of the viewport */
-  left: 0; /* Aligns it to the left edge of the viewport */
-  z-index: 1000; /* Ensures it stays above other content */
+  justify-content: center; 
+  padding: 0 20px; 
+  width: 100%; 
+  box-sizing: border-box; 
+  position: fixed; 
+  top: 0; 
+  left: 0;
+  z-index: 1000;
   font-family: 'NorseBold'
 }
 
 #task-bar nav a {
-  color: white; /* Text color */
-  text-decoration: none; /* Removes underline from links */
-  margin-left: 20px; /* Adds space between the links */
-  font-size: 16px; /* Adjust font size */
+  color: white; 
+  text-decoration: none; 
+  margin-left: 20px;
+  font-size: 16px; 
 }
 
 #task-bar nav a:hover {
-  text-decoration: underline; /* Underlines links when hovered */
+  text-decoration: underline; 
 }
 
 .intro {
-  display: flex; /* Enables Flexbox for the intro section */
-  flex-direction: row; /* Aligns items in a row */
-  justify-content: space-between; /* Adds space between the two columns */
-  gap: 20px; /* Adds a gap between the columns */
-  padding-top: 80px; /* Ensures content doesn't overlap with the task-bar */
-  min-height: 300px; /* Sets a minimum height for visibility */
+  display: flex; 
+  flex-direction: row; 
+  justify-content: space-between; 
+  gap: 20px; 
+  padding-top: 80px; 
+  min-height: 300px; 
 }
 
 .page-wrapper{
@@ -70,23 +70,21 @@ body {
 
 }
 
-/* Styling for each column */
 .summary, .preamble {
-  flex: 1; /* Ensures both columns take up equal space */
-  padding: 20px; /* Adds padding inside each column */
-  box-sizing: border-box; /* Includes padding in the element's total width */
-  border: 4px solid #333; /* Adds a border around each column for visibility */
+  flex: 1; 
+  padding: 20px;
+  box-sizing: border-box; 
+  border: 4px solid #333; 
   border-radius: 15px;
   opacity: 0.90;
 }
 
-/* Background colors for the columns */
 .summary {
-  background-color: #f2f2f2; /* Light grey background */
+  background-color: #f2f2f2;
 }
 
 .preamble {
-  background-color: #f2f2f2; /* Slightly darker grey */
+  background-color: #f2f2f2;
   font-family: 'NorseBold'
 }
 
@@ -100,7 +98,7 @@ body {
 }
 
 .accordion-btn.active:after {
-  content: '\2212'; /* Change to "-" symbol */
+  content: '\2212';
 }
 
 .accordion-btn.active + .accordion-content {
@@ -125,7 +123,7 @@ body {
   top: 0;
   height: 100%;
   width: 2px;
-  background-color: #ccc;
+  background-color: #333;
 }
 
 .timeline li:after {
@@ -142,7 +140,7 @@ body {
 
 @media (max-width: 768px) {
   .intro {
-    flex-direction: column; /* Stacks the columns on smaller screens */
+    flex-direction: column;
   }
 }
 
@@ -190,7 +188,6 @@ body {
   }
 }
 
-/* Accordion styles */
 .accordion-btn {
 	cursor: pointer;
 	background-color: #ccc;
@@ -212,7 +209,6 @@ body {
 	max-height: 100px;
 }
 
-/* Summary styling in details elements */
 details div {
 	border-left: 2px solid #000;
 	border-right: 2px solid #000;
